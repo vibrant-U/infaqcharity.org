@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidya Appeal - Infaq Charity Organization</title>
+    <meta name="description" content="Pay Fidya for missed Ramadan fasts through Infaq Charity. Help feed those unable to fast during Ramadan in Uganda.">
+    <meta name="keywords" content="Fidya, Ramadan, missed fasts, Islamic charity, feeding the poor, elderly care">
+    <meta name="author" content="Infaq Charity Organization">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="canonical" href="https://www.infaqcharityug.org/fidya.html">
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <img src="images/infaqcharity logo.jpg" alt="Logo of Infaq Charity Organization featuring the name 'INFAQ CHARITY ORG' in bold letters, symbolizing commitment to charitable work. The logo is set against a clean background, conveying a sense of professionalism and trust." />
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="appeal.html">Appeals</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="get_involved.html">Get Involved</a></li>
+                <li><a href="zakat_calculator.html">Zakat Calculator</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="cta-button">Donate Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('images/Orphan1.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>🌙 Fidya: Compassion for Those Who Cannot Fast</h1>
+                    <p>Provide food and support to elderly, sick, and pregnant Muslims who cannot fast during Ramadan.</p>
+                    <a href="#donation" class="btn primary hero-cta">Pay Your Fidya Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="introduction">
+            <div class="container">
+                <h2>Welcome to Fidya Appeal</h2>
+                <p>During Ramadan, fasting is a fundamental pillar of Islam. However, not everyone can observe this obligation due to health, age, or other reasons. Fidya allows you to fulfill your duty while helping those in need.</p>
+            </div>
+        </section>
+
+        <!-- Understanding Fidya Section -->
+        <section class="understanding-fidya">
+            <div class="container">
+                <h2>Understanding Fidya</h2>
+                <p>Fidya is the compensation paid by Muslims who are unable to fast during Ramadan due to age, illness, pregnancy, or other valid reasons. It involves providing food or its monetary equivalent to those in need.</p>
+                <figure class="section-image">
+                    <img src="images/Orphan1.jpg" alt="Elderly person receiving food assistance during Ramadan" loading="lazy" />
+                </figure>
+            </div>
+        </section>
+
+        <!-- Who Needs Fidya Section -->
+        <section class="who-needs-fidya">
+            <div class="container">
+                <h2>Who Needs Fidya?</h2>
+                <ul>
+                    <li><strong>The Elderly:</strong> Those over 70 years who find fasting difficult</li>
+                    <li><strong>The Sick:</strong> People with chronic illnesses or medical conditions</li>
+                    <li><strong>Pregnant & Nursing:</strong> Women in advanced pregnancy or breastfeeding</li>
+                    <li><strong>Travelers:</strong> Those on journeys that make fasting impractical</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Your Fidya in Action Section -->
+        <section class="your-fidya-action">
+            <div class="container">
+                <h2>Your Fidya in Action</h2>
+                <p>Through Infaq Charity, your Fidya donation provides nutritious meals and essential support to vulnerable Muslims in Uganda who cannot fast, ensuring they too can participate in the blessings of Ramadan.</p>
+            </div>
+        </section>
+
+        <!-- Impact Metrics Section -->
+        <section class="impact">
+            <div class="container">
+                <h2>Our Impact</h2>
+                <div class="impact-metrics">
+                    <div class="metric-box"><i class="fas fa-utensils"></i> Daily Meals Provided</div>
+                    <div class="metric-box"><i class="fas fa-users"></i> Families Supported</div>
+                    <div class="metric-box"><i class="fas fa-moon"></i> Ramadan Blessings</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Section -->
+        <section id="donation" class="donation">
+            <div class="container">
+                <div class="donation-content">
+                    <div class="donation-widget">
+                        <h3>Pay Your Fidya</h3>
+
+                        <div class="fidya-calculator">
+                            <h4>Fidya Amount Calculator</h4>
+                            <p>Enter the number of missed fasts:</p>
+                            <div class="calculator-input">
+                                <label for="fasts-missed">Days missed:</label>
+                                <input type="number" id="fasts-missed" min="1" max="30" value="1">
+                                <span class="amount-display">$<span id="fidya-amount">10</span> per day</span>
+                            </div>
+                        </div>
+
+                        <a href="donate.html?type=fidya" class="btn primary donate-btn" id="fidya-donate-btn">
+                            <i class="fas fa-heart"></i> Pay Fidya Now
+                        </a>
+
+                        <div class="fidya-benefits">
+                            <h4>Blessings of Fidya</h4>
+                            <ul>
+                                <li>Fulfills religious obligation</li>
+                                <li>Helps those unable to fast</li>
+                                <li>Earns continuous rewards</li>
+                                <li>Community solidarity in Ramadan</li>
+                            </ul>
+                        </div>
+
+                        <p class="share-note">Share the importance of Fidya during Ramadan!</p>
+                        <div class="social-share">
+                            <i class="fab fa-whatsapp"></i>
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-column mission">
+                <h3>Infaq Charity Organization 🇺🇬</h3>
+                <p>Committed to transparency and sustainable development. Your donations provide water, education, and support to vulnerable communities in Uganda.</p>
+                <p class="registration-info">
+                    <strong>Registered Non-Profit (Uganda):</strong> [Your NPO ID No.]<br>
+                    <strong>Founded:</strong> 2024
+                </p>
+            </div>
+
+            <div class="footer-column contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Head Office: Mbale city, Uganda</p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:info@infaqcharity.org">info@infaqcharity.org</a></p>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> Phone: +256774302574 (UG)</p>
+                <p class="banking-note"><i class="fas fa-university" aria-hidden="true"></i> For Banking: See our <a href="donate.html">Donation Page</a> for SWIFT/BIC details.</p>
+            </div>
+
+            <div class="footer-column newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to receive updates about our projects and impact.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    
+                </form>
+            </div>
+
+            <div class="footer-column social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61560969216084" target="_blank" rel="noopener" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/infaqcharityorg?igsh=dnE3bzdsYTFxNXEw" target="_blank" rel="noopener" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.tiktok.com/@ic.org?_r=1&_t=ZM-91rO1eE4K31" target="_blank" rel="noopener" aria-label="Follow us on TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html#transparency">Financial Reports</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="get_involved.html">Partner with Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Infaq Charity Organization. All Rights Reserved. Development by Infaq Charity Team.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/256774302574?text=Assalam%20Alaikum.%20I%20have%20a%20question%20about%20your%20charity%20projects." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <script src="javascript.js" defer></script>
+</body>
+</html>

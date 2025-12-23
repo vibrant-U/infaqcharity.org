@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakat Calculator - Infaq Charity Organization</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <img src="images/infaqcharity logo.jpg" alt="Logo of Infaq Charity Organization featuring the name 'INFAQ CHARITY ORG' in bold letters, symbolizing commitment to charitable work. The logo is set against a clean background, conveying a sense of professionalism and trust." />
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="appeal.html">Appeals</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="get_involved.html">Get Involved</a></li>
+                <li><a href="zakat_calculator.html" class="active" aria-current="page">Zakat Calculator</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="cta-button">Donate Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <h1>Calculate Your Zakat Obligation</h1>
+            <p>Fulfill your Islamic duty with confidence. Our Zakat calculator helps you determine your 2.5% obligation on wealth held for one lunar year.</p>
+            <div class="zakat-quote">
+                <blockquote>
+                    "And establish prayer and give Zakat." — Quran 2:110
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="zakat-calculator" aria-labelledby="calculator-heading">
+            <h2 id="calculator-heading">Zakat Calculator Tool</h2>
+            <p class="calculator-intro">
+                Zakat is obligatory on Muslims who meet the Nisab threshold. Use this tool to calculate your Zakat accurately.
+                <span id="nisabValue" class="nisab-info"></span>
+            </p>
+
+            <div class="calculator-container">
+                <form id="zakatForm" class="calculator-form">
+                    <div class="form-section assets-section">
+                        <h3><i class="fas fa-coins" aria-hidden="true"></i> Your Zakatable Assets</h3>
+                        <p>Enter the value of assets you've held for one full lunar year:</p>
+
+                        <div class="input-grid">
+                            <div class="input-card">
+                                <label for="cashValue">
+                                    <i class="fas fa-money-bill-wave" aria-hidden="true"></i>
+                                    Cash & Savings (USD)
+                                </label>
+                                <input type="number" id="cashValue" value="0" min="0" placeholder="5000">
+                            </div>
+
+                            <div class="input-card">
+                                <label for="goldValue">
+                                    <i class="fas fa-gem" aria-hidden="true"></i>
+                                    Gold & Silver (USD)
+                                </label>
+                                <input type="number" id="goldValue" value="0" min="0" placeholder="1200">
+                            </div>
+
+                            <div class="input-card">
+                                <label for="stockValue">
+                                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                    Investments & Stocks (USD)
+                                </label>
+                                <input type="number" id="stockValue" value="0" min="0" placeholder="800">
+                            </div>
+
+                            <div class="input-card">
+                                <label for="receivables">
+                                    <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
+                                    Receivables (USD)
+                                </label>
+                                <input type="number" id="receivables" value="0" min="0" placeholder="200">
+                            </div>
+
+                            <div class="input-card">
+                                <label for="businessInventory">
+                                    <i class="fas fa-store" aria-hidden="true"></i>
+                                    Business Inventory (USD)
+                                </label>
+                                <input type="number" id="businessInventory" value="0" min="0" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section liabilities-section">
+                        <h3><i class="fas fa-minus-circle" aria-hidden="true"></i> Deductible Liabilities</h3>
+                        <p>Subtract immediate debts and obligations:</p>
+
+                        <div class="input-card liability-card">
+                            <label for="liabilities">
+                                <i class="fas fa-credit-card" aria-hidden="true"></i>
+                                Immediate Debts & Bills (USD)
+                            </label>
+                            <input type="number" id="liabilities" value="0" min="0" placeholder="300">
+                            <small>Include only debts due within the next month</small>
+                        </div>
+                    </div>
+
+                    <div class="calculate-section">
+                        <button type="submit" class="btn primary calculate-btn">
+                            <i class="fas fa-calculator" aria-hidden="true"></i>
+                            Calculate My Zakat
+                        </button>
+                    </div>
+                </form>
+
+                <div id="zakatResult" class="result-display" style="display: none;">
+                    <div class="result-header">
+                        <h3><i class="fas fa-chart-pie" aria-hidden="true"></i> Your Zakat Calculation</h3>
+                    </div>
+
+                    <div class="result-summary">
+                        <div class="summary-item">
+                            <span class="label">Total Assets:</span>
+                            <span class="value" id="totalAssets">0.00 USD</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Minus Liabilities:</span>
+                            <span class="value" id="totalLiabilities">0.00 USD</span>
+                        </div>
+                        <div class="summary-item net-worth">
+                            <span class="label">Net Zakatable Wealth:</span>
+                            <span class="value" id="netWorth">0.00 USD</span>
+                        </div>
+                    </div>
+
+                    <div class="zakat-amount">
+                        <div class="amount-display">
+                            <span class="amount-label">Your Zakat (2.5%):</span>
+                            <span class="amount-value" id="zakatDue">0.00 USD</span>
+                        </div>
+                        <div class="zakat-note">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            This amount is due if you meet the Nisab threshold and have held wealth for one lunar year.
+                        </div>
+                    </div>
+
+                    <div class="donation-cta">
+                        <h4>Fulfill Your Zakat with Infaq Charity</h4>
+                        <p>Your Zakat will directly support orphans, water projects, and education in Uganda.</p>
+                        <div class="cta-buttons">
+                            <a href="donate.html?type=zakat" class="btn primary">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Donate Zakat Now
+                            </a>
+                            <a href="orphan.html" class="btn secondary">
+                                <i class="fas fa-child" aria-hidden="true"></i>
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="zakat-education" aria-labelledby="education-heading">
+            <h2 id="education-heading">Understanding Zakat</h2>
+            <div class="education-grid">
+                <article class="education-card">
+                    <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                    <h3>What is Zakat?</h3>
+                    <p>Zakat is one of the Five Pillars of Islam, obligatory purification of wealth distributed to those in need.</p>
+                </article>
+
+                <article class="education-card">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <h3>When is Zakat Due?</h3>
+                    <p>Zakat becomes obligatory when wealth reaches the Nisab threshold and has been held for one lunar year.</p>
+                </article>
+
+                <article class="education-card">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <h3>Who Benefits?</h3>
+                    <p>Zakat is distributed to orphans, widows, the poor, and other eligible recipients as defined in Islamic law.</p>
+                </article>
+
+                <article class="education-card">
+                    <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                    <h3>Why Give Zakat?</h3>
+                    <p>Zakat purifies wealth, promotes social welfare, and brings blessings and barakah to your remaining wealth.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="zakat-projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Your Zakat in Action</h2>
+            <p>See how your Zakat contributions transform lives in Uganda through our verified projects.</p>
+
+            <div class="projects-preview">
+                <article class="project-preview-card">
+                    <img src="images/Orphan.jpg" alt="Orphan sponsorship program" loading="lazy" />
+                    <h3>Orphan Care & Education</h3>
+                    <p>Provide food, education, and healthcare to orphaned children.</p>
+                    <a href="orphan.html" class="btn secondary">Learn More</a>
+                </article>
+
+                <article class="project-preview-card">
+                    <img src="images/water.jpg" alt="Clean water well project" loading="lazy" />
+                    <h3>Clean Water Access</h3>
+                    <p>Build sustainable wells serving hundreds of families.</p>
+                    <a href="appeal.html" class="btn secondary">View Appeals</a>
+                </article>
+
+                <article class="project-preview-card">
+                    <img src="images/education.jpg" alt="Education and mosque construction" loading="lazy" />
+                    <h3>Education & Infrastructure</h3>
+                    <p>Support schools and mosques in rural communities.</p>
+                    <a href="about.html" class="btn secondary">Our Mission</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-column mission">
+                <h3>Infaq Charity Organization 🇺🇬</h3>
+                <p>Committed to transparency and sustainable development. Your donations provide water, education, and support to vulnerable communities in Uganda.</p>
+                <p class="registration-info">
+                    <strong>Registered Non-Profit (Uganda):</strong> [Your NPO ID No.]<br>
+                    <strong>Founded:</strong> 2024
+                </p>
+            </div>
+
+            <div class="footer-column contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Head Office: Mbale city, Uganda</p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:info@infaqcharity.org">info@infaqcharity.org</a></p>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> Phone: +256774302574 (UG)</p>
+                <p class="banking-note"><i class="fas fa-university" aria-hidden="true"></i> For Banking: See our <a href="donate.html">Donation Page</a> for SWIFT/BIC details.</p>
+            </div>
+
+            <div class="footer-column newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to receive updates about our projects and impact.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    
+                </form>
+            </div>
+
+            <div class="footer-column social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61560969216084" target="_blank" rel="noopener" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/infaqcharityorg?igsh=dnE3bzdsYTFxNXEw" target="_blank" rel="noopener" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.tiktok.com/@ic.org?_r=1&_t=ZM-91rO1eE4K31" target="_blank" rel="noopener" aria-label="Follow us on TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html#transparency">Financial Reports</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="get_involved.html">Partner with Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Infaq Charity Organization. All Rights Reserved. Development by InfaqCharityTeam.</p>
+        </div>
+    </footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/256774302574?text=Assalam%20Alaikum.%20I%20have%20a%20question%20about%20your%20charity%20projects." target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
